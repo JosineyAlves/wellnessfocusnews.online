@@ -1,0 +1,284 @@
+/* Protocolo Ressonância — landing (referência visual: preto / branco / vermelho) */
+
+:root {
+  --bg: #000000;
+  --text: #fff;
+  --copy: #d1d5dc;
+  --primary: #e30013;
+  --red: var(--primary);
+  --red-hover: color-mix(in oklab, var(--primary) 72%, black);
+  --card-bg: #0a0a0a;
+  --card-border: #2a2a2a;
+  --muted: #6b6b6b;
+  --wave: rgba(0, 200, 255, 0.12);
+  --max: 800px;
+  --font: "Roboto", system-ui, sans-serif;
+  --font-display: "Bebas Neue", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+strong {
+  font-weight: 700;
+  color: var(--copy);
+}
+
+.wave-bg {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 0;
+  background:
+    linear-gradient(to bottom, transparent 50%, var(--bg) 85%),
+    url("assets/img/banner_1400x440.jpg") center top / 100% auto no-repeat;
+}
+
+@media (min-width: 768px) {
+  .wave-bg {
+    background:
+      linear-gradient(to bottom, transparent 50%, var(--bg) 85%),
+      url("assets/img/banner_1400x440.jpg") center top / auto no-repeat;
+  }
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* Hero: texto e badge alinhados à esquerda; vídeo continua largura total */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero .badge {
+  align-self: flex-start;
+}
+
+.hero__title,
+.hero__subtitle {
+  width: 100%;
+  text-align: left;
+  color: var(--text)
+}
+.hero__subtitle {
+  color: var(--copy)
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 2.5rem 2rem 5rem;
+  }
+}
+
+/* Tipografia de destaque (igual ao projeto original: Bebas Neue) */
+.hero__title,
+.hero__subtitle,
+.heading-red,
+.heading-white,
+.cta,
+.brand-footer {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+/* Badge "Confidencial" — idêntico à referência (Roboto bold, vermelho vivo, fundo quase preto) */
+.badge {
+  display: inline-block;
+  margin: 0 0 1.75rem;
+  padding: 8px 24px;
+  font-family: var(--font);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background-color: color-mix(in oklab, var(--primary) 20%, transparent);
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+}
+
+/* Hero — duas linhas; “sua mente” com brilho vermelho (referência) */
+.hero__title {
+  margin: 0 0 1rem;
+  font-size: clamp(2.45rem, 9vw, 3.5rem);
+  line-height: 0.92;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.hero__title-line {
+  display: block;
+}
+
+.hero__title .text-red {
+  color: var(--primary);
+  text-shadow:
+    0 0 5px color-mix(in oklab, var(--primary) 40%, transparent),
+    0 0 12px color-mix(in oklab, var(--primary) 22%, transparent),
+    0 0 24px color-mix(in oklab, var(--primary) 10%, transparent);
+}
+
+.hero__subtitle {
+  margin: 0 0 2rem;
+  font-size: clamp(1.15rem, 3.5vw, 1.45rem);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+.text-red {
+  color: var(--red);
+}
+
+/* Video */
+.video-wrap {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.video-frame:focus {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+
+/* Sections */
+.section {
+  padding-top: 3rem;
+}
+
+.copy-block p,
+.footer-block p {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.heading-red {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.7rem, 3.5vw, 1.7rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  color: var(--red);
+}
+
+.heading-white {
+  margin: 2rem 0 1rem;
+  font-size: clamp(1.7rem, 3.2vw, 1.7rem);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.copy-block .heading-white:first-of-type {
+  margin-top: 1.75rem;
+}
+
+.heading-tight {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* CTA */
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--red);
+  border: none;
+  border-radius: 0;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.cta:hover {
+  background: var(--red-hover);
+}
+
+.cta:active {
+  transform: scale(0.99);
+}
+
+.cta__icon {
+  width: 0;
+  height: 0;
+  margin-left: -0.15rem;
+  border-style: solid;
+  border-width: 7px 0 7px 11px;
+  border-color: transparent transparent transparent #fff;
+}
+
+
+/* Footer */
+.footer-block .heading-white {
+  margin-top: 0;
+}
+
+.footer-block {
+  text-align: center;
+}
+
+.footer-block .heading-white + p {
+  text-align: center;
+}
+
+.brand-footer {
+  margin: 3rem 0 0 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--muted) !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
