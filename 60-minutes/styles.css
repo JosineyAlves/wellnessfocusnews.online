@@ -70,7 +70,7 @@ strong {
   z-index: 1;
   max-width: var(--max);
   margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
+  padding: 2rem 1.5rem 2rem;
 }
 
 .page--bottom {
@@ -180,7 +180,7 @@ strong {
 
 /* Sections */
 .section {
-  padding-top: 3rem;
+  padding-top: 2rem;
 }
 
 .copy-block p,
@@ -309,7 +309,7 @@ strong {
 .pricing-header h2 {
   margin: 0;
   font-family: var(--font);
-  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: 0;
@@ -323,10 +323,16 @@ strong {
 }
 
 .pricing-arrow {
-  font-size: 2rem;
+  display: flex;
+  justify-content: center;
   color: #fff;
-  margin-top: 0.25rem;
-  line-height: 1;
+  margin-top: 0.5rem;
+  animation: arrow-bounce 1.4s ease-in-out infinite;
+}
+
+@keyframes arrow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
 }
 
 .pricing-cards {
@@ -335,7 +341,7 @@ strong {
   justify-content: center;
   gap: 1.25rem;
   padding: 2.5rem 1.5rem 0;
-  max-width: 1100px;
+  max-width: 1150px;
   margin: 0 auto;
 }
 
@@ -348,7 +354,7 @@ strong {
 /* Base card */
 .pricing-card {
   flex: 1;
-  max-width: 400px;
+  max-width: 450px;
   background: #fff;
   border: 2px solid #b5becc;
   border-radius: 20px;
@@ -376,7 +382,7 @@ strong {
   width: calc(100% + 2.5rem);
   text-align: center;
   padding: 0.6rem 0;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   color: #555;
@@ -390,19 +396,19 @@ strong {
   width: calc(100% + 2.5rem);
   text-align: center;
   padding: 0.6rem 0;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: #fff;
-  background: #13639D;
+  background: #0c4b79;
   border-radius: 20px 20px 0 0;
   margin-bottom: 0.75rem;
 }
 
 .pricing-card__bottles {
-  margin: 0 0 0.2rem;
+  margin: 0 0 -0.75rem;
   font-family: var(--font);
-  font-size: 2.6rem;
+  font-size: 2.3rem;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -410,13 +416,13 @@ strong {
 }
 
 .pricing-card--featured .pricing-card__bottles {
-  font-size: 2.6rem;
+  font-size: 2.3rem;
   color: #fff;
 }
 
 .pricing-card__supply {
   margin: 0 0 0.75rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: #666;
   font-weight: 500;
 }
@@ -432,7 +438,6 @@ strong {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.75rem;
   min-height: 220px;
 }
 
@@ -497,7 +502,8 @@ strong {
 }
 
 .feat--no {
-  color: #b71c1c;
+  color: #0c4b79;
+  font-weight: 100;
 }
 
 .pricing-card__features li img {
@@ -507,8 +513,8 @@ strong {
 }
 
 .pricing-card--featured .feat--yes {
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
+  background: rgb(255, 255, 255);
+  color: rgb(13, 42, 69);
 }
 
 /* Buy Now button */
@@ -540,7 +546,7 @@ strong {
 
 .pricing-card__payments img {
   width: 100%;
-  max-width: 180px;
+  max-width: 260px;
   height: auto;
 }
 
@@ -585,8 +591,8 @@ strong {
     grid-column: 1 / -1;
     width: 100%;
     border-radius: 20px 20px 0 0;
-    font-size: 1.2rem;
-    margin-bottom: 0;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
   }
 
   /* Coluna esquerda: imagem + título */
@@ -600,11 +606,11 @@ strong {
   .card-left .pricing-card__bottles {
     font-size: 1.6rem;
     text-align: center;
-    margin: 0 0 0.4rem;
+    margin: 0 0 -0.5rem;
   }
 
   .card-left .pricing-card__supply {
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
 
   }
@@ -648,6 +654,7 @@ strong {
     font-size: 0.7rem;
     padding: 0.1rem 0.25rem;
     text-align: left;
+    font-weight: 400;
   }
 
   .card-right .pricing-card__btn {

@@ -27,17 +27,16 @@
           <vturb-smartplayer id="vid-69d4456a49922114cb886592" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/69d4456a49922114cb886592/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
         </div>
       </header>
-      <a class="cta" href="#">
-        <span class="cta__icon" aria-hidden="true"></span>
-        Unlock access now
-      </a>
     </main>
-
     <!-- Pricing Section -->
-    <section class="pricing-section">
+    <section class="pricing-section esconde">
       <div class="pricing-header">
         <h2>Claim Your Discounted <strong>MemoryON</strong><br>Below For Huge Savings</h2>
-        <div class="pricing-arrow" aria-hidden="true">&#8964;</div>
+        <div class="pricing-arrow" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
       </div>
 
       <div class="pricing-cards">
@@ -225,5 +224,49 @@
           <p>&copy; 2026 60 Minutes. All rights reserved.</p>
         </div>
     </footer>
+    <style>
+  .esconder {
+    display: none;
+  }
+</style>
+
+<script>
+  var listPitch = {
+    '69d4456a49922114cb886592': { delay: 2549, utm: 'utm_content=vslA' },
+    'ID_DO_VÍDEO_B': { delay: 10, utm: 'utm_content=vslB' }
+  };
+
+  var alreadyInitialized = false;
+
+  var updateLinksWithUTM = function(utmParam) {
+    var links = document.querySelectorAll('a[href]:not([href*="#"])');
+    var separator = '?';
+    var queryString = separator + utmParam;
+    for (var i = 0; i < links.length; i++) {
+      var link = links[i];
+      if (link.href.indexOf(utmParam) !== -1) continue;
+      if(utmParam === undefined) return
+      var baseUrl = link.href.split('?')[0];
+      link.href = baseUrl + queryString;
+    }
+  };
+
+  document.addEventListener('player:ready', function(event) {
+    if (alreadyInitialized) return;
+
+    var detail = event.detail || {};
+    var config = detail.config || {};
+    var player = detail.player || document.querySelector('vturb-smartplayer');
+    var playerId = config.id;
+    var pitchConfig = listPitch[playerId];
+
+    if (!playerId || !pitchConfig) return;
+
+    alreadyInitialized = true;
+
+    player.displayHiddenElements(pitchConfig.delay, ['.esconder'], { persist: true });
+    //updateLinksWithUTM(pitchConfig.utm);
+  });
+</script>
   </body>
 </html>
