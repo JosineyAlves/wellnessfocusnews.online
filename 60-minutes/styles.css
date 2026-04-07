@@ -117,7 +117,7 @@ strong {
   margin: 0 0 1.75rem;
   padding: 8px 24px;
   font-family: var(--font);
-  font-size: 0.8125rem;
+  font-size: 0.8rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.05em;
@@ -222,7 +222,7 @@ strong {
   width: 100%;
   margin-top: 2rem;
   padding: 1rem 1.25rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   text-decoration: none;
@@ -283,4 +283,113 @@ strong {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Site Footer */
+.site-footer {
+  width: 100%;
+  margin-top: 4rem;
+  background: var(--bg);
+  font-family: var(--font);
+}
+
+.site-footer__top {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: auto repeat(3, 1fr) auto;
+  gap: 2.5rem;
+  box-sizing: border-box;
+}
+
+.site-footer__logo img {
+  width: 100px;
+  height: auto;
+}
+
+.site-footer__heading {
+  margin: 0 0 1rem;
+  font-family: var(--font);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.site-footer__nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.site-footer__nav a {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-footer__nav a:hover {
+  color: var(--text);
+}
+
+.site-footer__icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+.site-footer__icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.site-footer__icons a:hover {
+  color: var(--text);
+}
+
+.site-footer__icons svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  stroke: none;
+}
+
+.site-footer__bottom {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.site-footer__bottom p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+@media (max-width: 767px) {
+  .site-footer__top {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .site-footer__logo {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer__social {
+    grid-column: 1 / -1;
+  }
 }
