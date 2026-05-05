@@ -104,7 +104,7 @@ a { text-decoration: none; }
   border: 3px solid #0039ff;
   border-radius: 32px;
   font-family: 'Nunito', sans-serif;
-  font-size: clamp(16px, 1.5vw, 19px);
+  font-size: clamp(18px, 1.5vw, 19px);
   font-weight: 800;
   text-align: center;
   cursor: pointer;
