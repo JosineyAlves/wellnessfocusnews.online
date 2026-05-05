@@ -399,12 +399,12 @@
   </script>
   <style>
   .esconder {
-    display: non;
+    display: none;
   }
 </style>
 
 <script>
-  var delaySeconds = 10;
+  var delaySeconds = 30;
   var player = document.querySelector("vturb-smartplayer");
   player.addEventListener("player:ready", function() {
     player.displayHiddenElements(delaySeconds, [".esconder"], {
