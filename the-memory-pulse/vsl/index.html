@@ -56,11 +56,11 @@
   ════════════════════════════════════ -->
   <div class="esconder">
   <section id="section-cta-top">
-<a href="https://pay.hotmart.com/I102393889B?checkoutMode=10" target="_blank" class="btn-cta">
+<a href="https://pay.hotmart.com/I102393889B?checkoutMode=10" target="_blank" class="btn-cta" id="smartplayer-click-event-1">
       YES, I WANT TO ACTIVATE MY MENTAL SHARPNESS!
     </a>
 
-    <a href="https://pay.hotmart.com/I102393889B?checkoutMode=10" target="_blank" class="btn-cart-link">
+    <a href="https://pay.hotmart.com/I102393889B?checkoutMode=10" target="_blank" class="btn-cart-link" id="smartplayer-click-event-2">
       Add to Cart
     </a>
 
@@ -214,11 +214,11 @@
       See the price in your <b>local currency,</b> by clicking the button below:
     </p>
 
-    <a href="https://pay.hotmart.com/I102393889B?checkoutMode=10" target="_blank" class="btn-cta btn-cta-square">
+    <a href="https://pay.hotmart.com/I102393889B?checkoutMode=10" target="_blank" class="btn-cta btn-cta-square" id="smartplayer-click-event-4">
       TAP HERE AND GET 70% OFF
     </a>
 
-    <a href="https://pay.hotmart.com/I102393889B?checkoutMode=10" target="_blank" class="btn-cart-link">
+    <a href="https://pay.hotmart.com/I102393889B?checkoutMode=10" target="_blank" class="btn-cart-link" id="smartplayer-click-event-5">
       Add to Cart
     </a>
 
@@ -327,7 +327,7 @@
 
     <!-- Final CTA after FAQ -->
     <a href="https://pay.hotmart.com/I102393889B?checkoutMode=10" target="_blank"
-       class="btn-cta btn-cta-square"
+       class="btn-cta btn-cta-square id="smartplayer-click-event-6"
        style="margin-top: clamp(24px,4vh,48px);">
       YES, I WANT TO ACTIVATE MY MENTAL SHARPNESS!
     </a>
@@ -399,12 +399,12 @@
   </script>
   <style>
   .esconder {
-    display: non;
+    display: none;
   }
 </style>
 
 <script>
-  var delaySeconds = 10;
+  var delaySeconds = 840;
   var player = document.querySelector("vturb-smartplayer");
   player.addEventListener("player:ready", function() {
     player.displayHiddenElements(delaySeconds, [".esconder"], {
