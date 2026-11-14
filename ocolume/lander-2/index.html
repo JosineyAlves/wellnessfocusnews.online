@@ -53,34 +53,17 @@ a{color:inherit}
 .crumbs strong{color:var(--brand);font-weight:600}
 
 /* ---------- HEADLINE ---------- */
-article{padding:28px 0 10px}
+article{padding:10px 0 10px}
 h1{
   margin:0 0 12px;font-size:38px;line-height:1.15;font-weight:800;color:#111;letter-spacing:-.02em;
 }
+.subhl{margin:0 0 22px;font-size:18px;line-height:1.45;font-weight:500;color:#111}
+@media(max-width:640px){.subhl{font-size:16px;margin-bottom:18px}}
 .hl{
   background:#F8DD51;color:var(--ink);padding:.0em .16em;
   box-decoration-break:clone;-webkit-box-decoration-break:clone;
 }
 @media(max-width:640px){h1{font-size:24px;margin-bottom:10px}body{font-size:18px}}
-
-/* ---------- LIVE ---------- */
-.live{
-  display:flex;align-items:center;justify-content:space-between;gap:10px;
-  width:100%;max-width:400px;margin:0 auto 12px;padding:7px 12px;
-  border:1px solid rgba(205,1,3,.18);border-radius:6px;background:rgba(205,1,3,.06);
-  font-size:13px;line-height:1.3;color:var(--ink);
-}
-.live__badge{
-  display:inline-flex;align-items:center;gap:6px;padding:3px 8px;border-radius:4px;
-  background:var(--brand);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;
-}
-.live__dot{width:7px;height:7px;border-radius:50%;background:#fff;animation:livePulse 1.2s ease-out infinite}
-.live__copy{margin:0;color:#444;font-size:13px;text-align:right}
-.live__copy strong{display:inline-block;min-width:34px;color:var(--ink);font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
-.live__copy strong.is-changing{animation:viewerPop .42s ease}
-@keyframes viewerPop{0%{transform:scale(1)}40%{transform:scale(1.12);color:var(--brand)}100%{transform:scale(1)}}
-@keyframes livePulse{0%{opacity:1}70%{opacity:.25}100%{opacity:1}}
-@media(prefers-reduced-motion:reduce){.live__dot{animation:none}}
 
 /* ---------- VSL ---------- */
 .vsl{margin:0 auto}
@@ -174,12 +157,6 @@ src="https://www.facebook.com/tr?id=1142349598727482&ev=PageView&noscript=1"
       <h1>Harvard Researchers Uncover<br>Natural Vision Self-Healing Protocol</h1>
       <p class="subhl">In clinical trials, 21,000+ patients have gone from nearly blind to perfect 20/20 vision</p>
 
-      <!-- LIVE -->
-      <div class="live" data-live>
-        <span class="live__badge"><span class="live__dot" aria-hidden="true"></span>LIVE</span>
-        <p class="live__copy"><strong data-live-viewers-count aria-live="polite">1,312</strong> people are watching now</p>
-      </div>
-
       <!-- VSL (vturb) -->
       <div class="vsl" id="video">
         <vturb-smartplayer id="vid-6adeab11a83657399d6c5b53" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 125% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/6adeab11a83657399d6c5b53/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
@@ -209,33 +186,5 @@ src="https://www.facebook.com/tr?id=1142349598727482&ev=PageView&noscript=1"
     <p class="f-copy">&copy; 2026 Los Angeles Post. All Rights Reserved.</p>
   </div>
 </footer>
-
-<script>
-  (function () {
-    var counter = document.querySelector("[data-live-viewers-count]");
-    if (counter) {
-      var count = 1077 + Math.floor(Math.random() * 500), min = 1057, max = 3250;
-      var fmt = function (v) { return new Intl.NumberFormat("en-US").format(v); };
-      var tick = function () {
-        var dir = Math.random() > 0.45 ? 1 : -1;
-        count = Math.min(max, Math.max(min, count + dir * (1 + Math.floor(Math.random() * 9))));
-        counter.textContent = fmt(count);
-        counter.classList.remove("is-changing"); void counter.offsetWidth; counter.classList.add("is-changing");
-        setTimeout(tick, 2200 + Math.random() * 2600);
-      };
-      counter.textContent = fmt(count);
-      setTimeout(tick, 1800);
-    }
-
-    var bar = document.querySelector("[data-live]");
-    var player = document.querySelector(".vsl vturb-smartplayer");
-    if (bar && player && window.ResizeObserver) {
-      new ResizeObserver(function () {
-        var w = player.getBoundingClientRect().width;
-        if (w > 0) bar.style.maxWidth = Math.round(w) + "px";
-      }).observe(player);
-    }
-  })();
-</script>
 </body>
 </html>
